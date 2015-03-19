@@ -62,6 +62,7 @@
       function update(message) {
         var html = message.replace("&", "&amp;");
         html = html.replace("<", "&lt;");
+        window.location.hash = "#" + encodeURIComponent(message);
         document.getElementById("txt").innerHTML = html;
         if ( document.getElementById("in").value != message ) {
           document.getElementById("in").value = message;
