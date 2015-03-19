@@ -9,6 +9,8 @@
       #div {
         margin: 50px auto;
         position: relative;
+        perspective: 55.5px;
+        perspective-origin: 0% 9%;
         -webkit-perspective: 55.5px;
         -webkit-perspective-origin: 0% 9%;
         width: 600px;
@@ -20,12 +22,15 @@
         height: 390px;
         transform-origin: 0 195px;
         transform: rotateY(3.65deg) translateY(24px);
+        -webkit-transform-origin: 0 195px;
+        -webkit-transform: rotateY(3.65deg) translateY(24px);
         opacity: 0.8;
         overflow: hidden;
       }
       #text > div {
         position: relative;
         transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
         top: 50%;
         font: italic bold 165px Arial;
         color: #edede6;
@@ -34,7 +39,16 @@
         text-align: center;
         line-height: 150px;
       }
-      input {width: 300px; font: italic bold 24px Arial; color: #edede6; background-color: #222; margin: 10px auto; display: block; text-align: center; border: 2px solid #666}
+      input {
+        width: 300px;
+        font: italic bold 24px Arial;
+        color: #edede6;
+        background-color: #222;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+        border: 2px solid #666
+      }
     </style>
     <script type="text/javascript" charset="utf-8">
       window.onload = function() {
