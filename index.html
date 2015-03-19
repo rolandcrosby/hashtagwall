@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Whoa, look what Twitter just painted on their office wall</title>
+    <style type="text/css">
+      body {background: #000}
+      #div {
+        margin: 50px auto;
+        position: relative;
+        -webkit-perspective: 55.5px;
+        -webkit-perspective-origin: 0% 9%;
+        width: 600px;
+        height: 424px;
+      }
+      img, #text {position: absolute;}
+      #text {
+        width: 1385px;
+        height: 390px;
+        transform-origin: 0 195px;
+        transform: rotateY(3.65deg) translateY(24px);
+        opacity: 0.8;
+        overflow: hidden;
+      }
+      #text > div {
+        position: relative;
+        transform: translateY(-50%);
+        top: 50%;
+        font: italic bold 165px Arial;
+        color: #edede6;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: -5px;
+        text-align: center;
+        line-height: 150px;
+      }
+      input {width: 300px; font: italic bold 24px Arial; color: #edede6; background-color: #222; margin: 10px auto; display: block; text-align: center; border: 2px solid #666}
+    </style>
+    <script type="text/javascript" charset="utf-8">
+      window.onload = function() {
+        var message = decodeURIComponent(window.location.hash.substring(1)).replace("<", "&lt;");
+        if (message == "") {
+          message = "#BENGHAZI";
+        }
+        document.getElementById("txt").innerHTML = message;
+        document.getElementById("in").value = message;
+      };
+    </script>
+  </head>
+  <body onload="document.getElementById('in').value=document.getElementById('txt').innerHTML">
+    <div id="div">
+      <img src="hashtagwall.jpg" alt="wall">
+      <div id="text"><div id="txt"></div></div>
+    </div>
+    <input onkeyup="document.getElementById('txt').innerHTML=this.value" id="in">
+  </body>
+</html>
