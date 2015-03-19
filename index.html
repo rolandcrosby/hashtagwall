@@ -42,16 +42,19 @@
         if (message == "") {
           message = "#BENGHAZI";
         }
+        update(message);
+      };
+      function update(message) {
         document.getElementById("txt").innerHTML = message;
         document.getElementById("in").value = message;
-      };
+      }
     </script>
   </head>
-  <body onload="document.getElementById('in').value=document.getElementById('txt').innerHTML">
+  <body>
     <div id="div">
       <img src="hashtagwall.jpg" alt="wall">
       <div id="text"><div id="txt"></div></div>
     </div>
-    <input onkeyup="document.getElementById('txt').innerHTML=this.value" id="in">
+    <input onkeyup="update(this.value)" id="in">
   </body>
 </html>
